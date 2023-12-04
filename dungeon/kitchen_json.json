@@ -1,0 +1,138 @@
+[
+    {
+        "id": 1,
+        "name": "Back Alley",
+        "desc": "A dimly lit area with a dumpster and a back exit to the main road.", 
+        "items": [rat_corpse],
+        "options": [
+            {
+                "name": "Exit",
+                "direction": "West",
+                "nextId": "null"
+            },
+            {
+                "name": "Pantry",
+                "direction": "South",
+                "nextId": 2
+            }
+        ]
+     },
+     {
+        "id": 2,
+        "name": "Dish Pit",
+        "desc": "Stacks of dirty dishes and a foul smell.", 
+        "items": [],
+        "options": [
+            {
+                "name": "Back Alley",
+                "direction": "North",
+                "nextId": 1
+            },
+            {
+                "name": "Prep Area",
+                "direction": "West",
+                "nextId": 3
+            }
+        ]
+     },
+     {
+        "id": 3,
+        "name": "Prep Area",
+        "desc": "Dirty cutting boards and half carved carcasses.", 
+        "items": [moldy_bread, butcher_knife],
+        "options": [
+            {
+                "name": "Dish Pit",
+                "direction": "East",
+                "nextId": 2
+            },
+            {
+                "name": "Make Line",
+                "direction": "South",
+                "nextId": 4
+            },
+            {
+                "name": "Pantry",
+                "direction": "West",
+                "nextId": 5
+            }
+        ]
+     },
+     {
+        "id": 4,
+        "name": "Make Line",
+        "desc": "Cooking stations bustling with activity.", 
+        "items": [frying_pan],
+        "options": [
+            {
+                "name": "Prep Area",
+                "direction": "North",
+                "nextId": 3
+            },
+            {
+                "name": "Order Window",
+                "direction": "West",
+                "nextId": 6
+            }
+        ]
+     },
+     {
+        "id": 5,
+        "name": "Pantry",
+        "desc": "Shelves stocked with mysterious ingredients. The door leads to the dungeon.", 
+        "items": [tomato],
+        "options": [
+            {
+                "name": "Prep Area",
+                "direction": "East",
+                "nextId": 3
+            },
+            {
+                "name": "Order Window",
+                "direction": "South",
+                "nextId": 6
+            },
+            {
+                "name": "Dungeon",
+                "direction": "Down",
+                "nextId": "null"
+            }
+        ]
+     },
+     {
+        "id": 6,
+        "name": "Order Window",
+        "desc": "A window to serve completed dishes.", 
+        "items": [ticket_1],
+        "options": [
+            {
+                "name": "Pantry",
+                "direction": "North",
+                "nextId": 5
+            },
+            {
+                "name": "Dining Room",
+                "direction": "South",
+                "nextId": 7
+            },
+            {
+                "name": "Make Line",
+                "direction": "East",
+                "nextId": 4
+            }
+        ]
+     },
+     {
+        "id": 7,
+        "name": "Dining Area",
+        "desc": "Long tables and chairs scattered about.",
+        "items": [orange_soda],
+        "options": [
+            {
+                "name": "Order Window",
+                "direction": "North",
+                "nextId": 6
+            }
+        ]
+     }
+]

@@ -24,14 +24,14 @@ moldy_bread = Item(name="Moldy Bread", weight=1, health=5, fight=0, disposable=T
 rat = Monster(name="Rat", desc="A rabid rat with beady eyes", weight=1, health=10, fight=1)
 
 # Tickets
-ticket_1 = Ticket(name="Rattatouille", desc="A gruesome delight, melding rat corpses with succulent tomatoes", ingredients=["Rat Corpse","Rat Corpse","Rat Corpse","Rotten Tomato"])
+ticket_1 = Ticket(name="Rattatouille", desc="A gruesome delight, melding rat corpses with succulent tomatoes", ingredients=["Rat Corpse","Rat Corpse","Rat Corpse","Rotten Tomato"], xp=20)
 
-kitchen_json = [
+kitchen_json = """[
     {
         "id": 1,
         "name": "Back Alley",
         "desc": "A dimly lit area with a dumpster and a back exit to the main road.", 
-        "items": [rat_corpse],
+        "items": ["rat_corpse"],
         "options": [
             {
                 "name": "Exit",
@@ -67,7 +67,7 @@ kitchen_json = [
         "id": 3,
         "name": "Prep Area",
         "desc": "Dirty cutting boards and half carved carcasses.", 
-        "items": [moldy_bread, butcher_knife],
+        "items": ["moldy_bread", "butcher_knife"],
         "options": [
             {
                 "name": "Dish Pit",
@@ -90,7 +90,7 @@ kitchen_json = [
         "id": 4,
         "name": "Make Line",
         "desc": "Cooking stations bustling with activity.", 
-        "items": [frying_pan],
+        "items": ["frying_pan"],
         "options": [
             {
                 "name": "Prep Area",
@@ -108,7 +108,7 @@ kitchen_json = [
         "id": 5,
         "name": "Pantry",
         "desc": "Shelves stocked with mysterious ingredients. The door leads to the dungeon.", 
-        "items": [tomato],
+        "items": ["tomato"],
         "options": [
             {
                 "name": "Prep Area",
@@ -131,7 +131,7 @@ kitchen_json = [
         "id": 6,
         "name": "Order Window",
         "desc": "A window to serve completed dishes.", 
-        "items": [ticket_1],
+        "items": ["ticket 1"],
         "options": [
             {
                 "name": "Pantry",
@@ -154,7 +154,7 @@ kitchen_json = [
         "id": 7,
         "name": "Dining Area",
         "desc": "Long tables and chairs scattered about.",
-        "items": [orange_soda],
+        "items": ["orange_soda"],
         "options": [
             {
                 "name": "Order Window",
@@ -163,7 +163,7 @@ kitchen_json = [
             }
         ]
      }
-]
+]"""
 
 def get_valid_directions(current_room_id, kitchen):
     """Get valid directions for the current room."""
