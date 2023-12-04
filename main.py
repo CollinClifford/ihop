@@ -1,10 +1,21 @@
-from flask import Flask
+from entities.player import Player
+from dungeon.room import Room
+from dungeon.kitchen import navigate_kitchen, kitchen_json
+import json
 
-app = Flask(__name__)
+gobby = Player(name="Gobby", password="")
 
-@app.route('/')
-def hello():
-    return 'Hello, world!'
+def game():
+    # Load kitchen from JSON
+    while True:
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+        kitchen = json.loads(kitchen_json)
+        current_room_id = 1
+        
+        # Navigate the kitchens
+
+        current_room_id = navigate_kitchen(current_room_id, kitchen, gobby)
+
+if __name__ == "__main__":
+    game()
